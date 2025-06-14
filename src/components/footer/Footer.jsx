@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./Footer.css";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaArrowUp } from "react-icons/fa";
-import { MdOutlineImportExport, MdOutlineDirectionsCarFilled, MdOutlineBorderClear } from "react-icons/md";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaArrowUp, FaUtensils, FaGlassCheers, FaUserTie } from "react-icons/fa";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -18,82 +17,81 @@ const Footer = () => {
   };
 
   return (
-    <footer className="site-footer">
-      <div className="footer-top">
-        <div className="footer-container">
-          <div className="footer-grid">
-            <div className="footer-about">
-              <h5 className="logo-text">NN Queueing Services</h5>
-              <div className="divider"></div>
-              <p className="footer-tagline">
-                Your trusted partner for seamless import/export documentation, 
-                cross-border permits, and vehicle registration services across 
-                Southern Africa. We simplify complex processes with expertise 
-                and efficiency.
+    <footer className="gcs-site-footer">
+      <div className="gcs-footer-top">
+        <div className="gcs-footer-container">
+          <div className="gcs-footer-grid">
+            <div className="gcs-footer-about">
+              <h5 className="gcs-logo-text">The Service Syndicate</h5>
+              <div className="gcs-divider"></div>
+              <p className="gcs-footer-tagline">
+                Premium catering services providing expert chefs, professional waitstaff, 
+                and skilled bartenders for your special events. We bring culinary excellence 
+                and impeccable service to every occasion.
               </p>
-              <div className="footer-contact-info">
-                <div className="contact-item">
-                  <FaPhone className="contact-icon" />
-                  <span>+2700 000 000</span>
+              <div className="gcs-footer-contact-info">
+                <div className="gcs-contact-item">
+                  <FaPhone className="gcs-contact-icon" />
+                  <span>+27 123 456 789</span>
                 </div>
-                <div className="contact-item">
-                  <FaEnvelope className="contact-icon" />
-                  <span>nnqueueingservices.co.za</span>
+                <div className="gcs-contact-item">
+                  <FaEnvelope className="gcs-contact-icon" />
+                  <span>info@theservicesyndicate.co.za</span>
                 </div>
-                <div className="contact-item">
-                  <FaMapMarkerAlt className="contact-icon" />
-                  <span>123 Test Road Street, Mars</span>
+                <div className="gcs-contact-item">
+                  <FaMapMarkerAlt className="gcs-contact-icon" />
+                  <span>123 Test Street, Food District</span>
                 </div>
               </div>
             </div>
 
-            <div className="footer-links">
+            <div className="gcs-footer-links">
               <h3>Quick Links</h3>
-              <div className="divider"></div>
+              <div className="gcs-divider"></div>
               <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/services">Services</a></li>
+                <li><a href="/gallery">Gallery</a></li>
                 <li><a href="/contact">Contact</a></li>
-                <li><a href="#">FAQs</a></li>
               </ul>
             </div>
 
-            <div className="footer-services">
+            <div className="gcs-footer-services">
               <h3>Our Services</h3>
-              <div className="divider"></div>
+              <div className="gcs-divider"></div>
               <ul>
                 <li>
-                  <MdOutlineImportExport className="service-icon" />
-                  <a href="/services/import-export">Import/Export Licenses</a>
+                  <FaUtensils className="gcs-service-icon" />
+                  <a href="/services">Professional Chefs</a>
                 </li>
                 <li>
-                  <MdOutlineBorderClear className="service-icon" />
-                  <a href="/services/cross-border">Cross-Border Permits</a>
+                  <FaUserTie className="gcs-service-icon" />
+                  <a href="/services">Trained Waitstaff</a>
                 </li>
                 <li>
-                  <MdOutlineDirectionsCarFilled className="service-icon" />
-                  <a href="/services/vehicle-reg">Vehicle Registration</a>
+                  <FaGlassCheers className="gcs-service-icon" />
+                  <a href="/services">Skilled Bartenders</a>
                 </li>
                 <li>
-                  <MdOutlineDirectionsCarFilled className="service-icon" />
-                  <a href="/services/number-plates">Number Plates</a>
+                  <FaUtensils className="gcs-service-icon" />
+                  <a href="/services">Catering Equipment</a>
                 </li>
                 <li>
-                  <MdOutlineImportExport className="service-icon" />
-                  <a href="/services/customs">Customs Clearance</a>
+                  <FaUtensils className="gcs-service-icon" />
+                  <a href="/services">Custom Menu Planning</a>
                 </li>
               </ul>
             </div>
 
-            <div className="footer-newsletter">
+            <div className="gcs-footer-newsletter">
               <h3>Get Updates</h3>
-              <div className="divider"></div>
+              <div className="gcs-divider"></div>
               <p>
-                Subscribe to our newsletter for the latest regulations and service updates.
+                Subscribe for seasonal menus, special offers, and catering tips.
               </p>
-              <form onSubmit={handleSubscribe} className="newsletter-form">
-                <div className="form-group">
+              <form onSubmit={handleSubscribe} className="gcs-newsletter-form">
+                <div className="gcs-form-group">
                   <input
                     type="email"
                     value={email}
@@ -104,27 +102,27 @@ const Footer = () => {
                   <button type="submit">Subscribe</button>
                 </div>
                 {subscribed && (
-                  <p className="success-message">Thank you for subscribing!</p>
+                  <p className="gcs-success-message">Thank you for subscribing!</p>
                 )}
               </form>
-              <div className="business-hours">
+              <div className="gcs-business-hours">
                 <h4>Business Hours</h4>
-                <p>Mon-Fri: 8:00 AM - 5:00 PM</p>
-                <p>Sat: 9:00 AM - 1:00 PM</p>
-                <p>Sun: Closed</p>
+                <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
+                <p>Sat-Sun: 9:00 AM - 4:00 PM</p>
+                <p>24/7 for emergencies</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <div className="footer-container">
-          <div className="footer-bottom-content">
-            <p className="copyright">
-              © {currentYear} NN Queueing Services. All rights reserved.
+      <div className="gcs-footer-bottom">
+        <div className="gcs-footer-container">
+          <div className="gcs-footer-bottom-content">
+            <p className="gcs-copyright">
+              © {currentYear} theservicesyndicate . All rights reserved.
             </p>
-            <div className="footer-legal">
+            <div className="gcs-footer-legal">
               <a href="#">Privacy Policy</a>
               <a href="#">Terms of Service</a>
               <a href="#">Sitemap</a>
@@ -133,8 +131,16 @@ const Footer = () => {
         </div>
       </div>
 
+      <div className="gcs-footer-crafted">
+        <div className="gcs-footer-container">
+          <p className="gcs-crafted-text">
+            Crafted by <a href="https://wa.me/27677366141" target="_blank" rel="noopener noreferrer">Chimbo</a>
+          </p>
+        </div>
+      </div>
+
       <button
-        className="back-to-top"
+        className="gcs-back-to-top"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Back to top"
       >

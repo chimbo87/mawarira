@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { MdEmail } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { IoLocation, IoChevronDown } from "react-icons/io5";
+import { IoLocation } from "react-icons/io5";
 import { FaSquarePhone } from "react-icons/fa6";
+
 import { Link, useLocation } from "react-router-dom";
-import { Dropdown, Menu } from "antd";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -14,30 +14,12 @@ function Navbar() {
   const location = useLocation();
 
   const navigationItems = [
-    { path: "/", name: "Home" },
-    { path: "/contact", name: "Contact" },
-  ];
+    { path: "/", name: "home" },
+    { path: "/services", name: "services" },
+    { path: "/about", name: "about" },
 
-  // Services dropdown menu items
-  const servicesMenu = (
-    <Menu>
-      <Menu.Item key="1">
-        <Link to="/import-export-services" onClick={() => setIsMenuActive(false)}>
-          Imports and Exports
-        </Link>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <Link to="/vehicle-registrations" onClick={() => setIsMenuActive(false)}>
-         Vehicle Registration & Plates
-        </Link>
-      </Menu.Item>
-      <Menu.Item key="3">
-        <Link to="/cross-border-permits" onClick={() => setIsMenuActive(false)}>
-         Cross Border Permits
-        </Link>
-      </Menu.Item>
-    </Menu>
-  );
+    { path: "/contact", name: "contact" },
+  ];
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
@@ -50,123 +32,74 @@ function Navbar() {
     }
   }, [isMenuActive]);
 
-  const isServicesActive = location.pathname.startsWith('/services');
-
   return (
     <div id="navigation-bar">
       <div id="nav-top">
         <div id="nav-top-card">
           <small>
-            <MdEmail /> nnqueueingservices.co.za
+            <MdEmail /> info@theservicesyndicate.co.za
           </small>
         </div>
-        <div className="nav-top-cardlocation">
+        <div id="nav-top-card">
           <small id="top-nav-add">
             <IoLocation />
-            123 Test Road Street, Mars
+            123 Test Road , Test City
           </small>
         </div>
         <div id="nav-top-card">
           <small id="top-nav-addt">
-            <FaSquarePhone /> +2700 000 000
+            <FaSquarePhone /> +27746657524
           </small>
         </div>
       </div>
-      
       <nav className="navbar">
-        <div className="mitral-logo" onClick={() => navigate("/")}>
-          <small>LOGO</small>
+        <div
+        
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          {/* <img src={logo} alt="logo" /> */}
+          <small>
+            The Service Syndicate
+          </small>
         </div>
 
         <ul className={`nav-links ${isMenuActive ? "active" : ""}`}>
-          <li
-            style={
-              animatedLinks
-                ? {
-                    animation: `navLinkFade 0.5s ease forwards ${0 / 7 + 0.3}s`,
-                  }
-                : {}
-            }
-          >
-            <Link
-              to="/"
-              className={location.pathname === "/" ? "active" : ""}
-              onClick={() => {
-                setIsMenuActive(false);
-                setAnimatedLinks(false);
-              }}
-            >
-              Home
-            </Link>
-          </li>
-          
-          {/* Services dropdown - Desktop */}
-          <li className="services-dropdown desktop-only"
+          {navigationItems.map((item, index) => (
+            <li
+              key={item.name}
               style={
                 animatedLinks
                   ? {
-                      animation: `navLinkFade 0.5s ease forwards ${1 / 7 + 0.3}s`,
+                      animation: `navLinkFade 0.5s ease forwards ${
+                        index / 7 + 0.3
+                      }s`,
                     }
                   : {}
-              }>
-            <Dropdown 
-              overlay={servicesMenu} 
-              trigger={['hover', 'click']}
-              placement="bottomLeft"
+              }
             >
-              <span className={`dropdown-trigger ${isServicesActive ? "active" : ""}`}>
-                Services <IoChevronDown />
-              </span>
-            </Dropdown>
-          </li>
-
-          {/* Services dropdown - Mobile */}
-          <li className="services-mobile mobile-only"
-              style={
-                animatedLinks
-                  ? {
-                      animation: `navLinkFade 0.5s ease forwards ${1 / 7 + 0.3}s`,
-                    }
-                  : {}
-              }>
-            <Dropdown 
-              overlay={servicesMenu} 
-              trigger={['click']}
-              placement="bottomLeft"
-            >
-              <span className={`dropdown-trigger ${isServicesActive ? "active" : ""}`}>
-                Services <IoChevronDown />
-              </span>
-            </Dropdown>
-          </li>
-
-          <li
-            style={
-              animatedLinks
-                ? {
-                    animation: `navLinkFade 0.5s ease forwards ${2 / 7 + 0.3}s`,
-                  }
-                : {}
-            }
-          >
-            <Link
-              to="/contact"
-              className={location.pathname === "/contact" ? "active" : ""}
-              onClick={() => {
-                setIsMenuActive(false);
-                setAnimatedLinks(false);
-              }}
-            >
-              Contact
-            </Link>
-          </li>
+              <Link
+                to={item.path}
+                className={location.pathname === item.path ? "active" : ""}
+                onClick={() => {
+                  setIsMenuActive(false);
+                  setAnimatedLinks(false);
+                }}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <button
           className="chat-btn"
-          onClick={() => navigate("/contact")}
+          onClick={() => {
+            navigate("/contact");
+          }}
         >
-          Book Appointment
+          Book Now
         </button>
 
         <button

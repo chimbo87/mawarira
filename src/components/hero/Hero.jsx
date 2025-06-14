@@ -5,9 +5,9 @@ import "swiper/css";
 import { useNavigate } from "react-router-dom";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import banner01 from "../../assets/images/hero01.jpeg";
-import banner02 from "../../assets/images/hero02.jpeg";
-import banner03 from "../../assets/images/hero03.jpeg";
+import banner01 from "../../assets/images/home01.jpeg";
+import banner02 from "../../assets/images/home02.jpeg";
+import banner03 from "../../assets/images/home03.jpeg";
 import "./Hero.css";
 
 function Hero() {
@@ -15,23 +15,23 @@ function Hero() {
   const slides = [
     {
       id: 1,
-      title: "Import & Export Licences",
+      title: "Expert Chefs for Every Occasion",
       description:
-        "Streamline your international trade with our expert licensing services. Fast, compliant, and hassle-free solutions for all your import/export needs.",
+        "Professional culinary masters bringing restaurant-quality dining to your events with personalized menus and flawless execution",
       image: banner02,
     },
     {
       id: 2,
-      title: "Cross-Border Permits",
+      title: "Professional Service That Impresses",
       description:
-        "Seamless cross-border operations guaranteed. We handle all permit applications so your goods move freely across African borders without delays",
+        "Trained waitstaff delivering exceptional hospitality and seamless service to make your guests feel truly special",
       image: banner01,
     },
     {
       id: 3,
-      title: "Vehicle Registration & Plates",
+      title: "Craft Cocktails & Perfect Pours",
       description:
-        "One-stop solution for all vehicle documentation. From registration to number plates – we make road compliance quick and effortless.",
+        "Skilled bartenders creating signature drinks and providing expert beverage service for unforgettable celebrations",
       image: banner03,
     },
   ];
@@ -64,7 +64,7 @@ function Hero() {
                       navigate("/contact");
                     }}
                   >
-                    Schedule an appointment
+                    Get A Quotation
                   </button>
                 </div>
               </div>

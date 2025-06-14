@@ -1,20 +1,21 @@
 import React from "react";
-import ContactInfo from "../../components/contacts/ContactInfo";
-import LocationMap from "../../components/contacts/InteractiveMap";
-import ContactForm from "../../components/contacts/ContactForm";
-import "./Contact.css";
-
-import OperatingHours from "../../components/contacts/OperatingHours";
+import ContactHero from "./components/contacthero/ContactHero";
+import ContactForm from "./components/contactform/ContactForm";
+import ContactInfo from "./components/contactinfo/ContactInfo";
+import OfficeLocations from "./components/officelocations/OfficeLocations";
+import BusinessHours from "./components/businesshours/BusinessHours";
+import SocialMedia from "./components/socialmedia/SocialMedia";
 
 function Contact() {
   return (
     <div id="contactBox">
       <div id="contactBoxWrap">
-        <ContactInfo />
-        <LocationMap />
+        <ContactHero />
         <ContactForm />
-        <OperatingHours />
- 
+        <ContactInfo />
+        <OfficeLocations/>
+        <BusinessHours/>
+        <SocialMedia/>
       </div>
     </div>
   );

@@ -1,0 +1,69 @@
+/* Color Variables */
+:root {
+    --primary-navy: #1e3a8a;
+    --secondary-gold: #f59e0b;
+    --accent-white: #ffffff;
+    --text-gray: #374151;
+    --light-gray: #f8fafc;
+    --border-gray: #e5e7eb;
+  }
+  
+  /* Global Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .call-to-action {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--secondary-gold) 0%, #f97316 100%);
+    color: var(--accent-white);
+  }
+  
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+  
+  .cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  
+  .call-to-action .btn-primary {
+    background: var(--accent-white);
+    color: var(--secondary-gold);
+  }
+  
+  .call-to-action .btn-primary:hover {
+    background: var(--light-gray);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  }
+  
+  .call-to-action .btn-secondary {
+    background: transparent;
+    color: var(--accent-white);
+    border-color: var(--accent-white);
+  }
+  
+  .call-to-action .btn-secondary:hover {
+    background: var(--accent-white);
+    color: var(--secondary-gold);
+  }

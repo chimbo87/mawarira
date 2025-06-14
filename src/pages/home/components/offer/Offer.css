@@ -1,0 +1,51 @@
+/* Color Variables */
+:root {
+    --primary-navy: #1e3a8a;
+    --secondary-gold: #f59e0b;
+    --accent-white: #ffffff;
+    --text-gray: #374151;
+    --light-gray: #f8fafc;
+    --border-gray: #e5e7eb;
+  }
+  
+  /* Global Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+  .why-choose-us {
+    padding: 100px 0;
+    background: var(--accent-white);
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+  }
+  
+  .feature-card {
+    text-align: center;
+    padding: 40px 24px;
+  }
+  
+  .feature-icon {
+    color: var(--secondary-gold);
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin-bottom: 16px;
+  }
+  
+  .feature-card p {
+    line-height: 1.6;
+  }

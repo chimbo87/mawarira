@@ -1,15 +1,22 @@
 import React from "react";
 import Hero from "../../components/hero/Hero";
-import Offer from "../../components/offer/Offer";
-import Mission from "../../components/mission/Mission";
+import StatsCounter from "./components/statscounter/StatsCounter";
+import ServicesOverview from "./components/Servicesoverview/ServicesOverview";
+import Offer from "./components/offer/Offer";
+import FeaturedStaff from "./components/staff/FeaturedStaff";
+import Testimonials from "./components/testimonials/Testimonials";
+import Action from "./components/action/Action";
 
 function Home() {
   return (
     <>
       <Hero />
-      <Offer />
-      <Mission />
-
+      <StatsCounter />
+      <ServicesOverview />
+      <Offer/>
+      <FeaturedStaff/>
+      <Testimonials/>
+      <Action/>
     </>
   );
 }
